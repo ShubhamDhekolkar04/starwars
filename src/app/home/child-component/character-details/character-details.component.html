@@ -1,0 +1,103 @@
+<div class="web-container p-2">
+  <div class="d-flex justify-content-center gap-4">
+    <div class="profile-container d-flex flex-column justify-content-center gap-2">
+      <div class="w-100 d-flex justify-content-center align-items-center">
+        <div class="earth">
+          <img src="../../../../assets/earthNew.png" alt="Earth">
+        </div>
+      </div>
+
+      <div class="prfile-details fontRoboto">
+        <div class="fontweight">Name :{{characterDetails?.name}}</div>
+        <div>SkywalkerBorn:{{characterDetails?.birth_year}}</div>
+        <div>Gender:{{characterDetails?.gender}}</div>
+        <div>Height:{{characterDetails?.birth_year}}</div>
+        <div>Weight:{{characterDetails?.height}}</div>
+        <div>Created at: {{ characterDetails?.created | date:'dd/MM/yyyy h:mm a' }} </div>
+        <div>Edited at:{{characterDetails?.edited | date:'dd/MM/yyyy h:mm a'}}</div>
+        <div>Hair Color:{{characterDetails?.hair_color}}</div>
+        <div>Eye Color:{{characterDetails?.eye_color}}</div>
+        <div>Skin Color:{{characterDetails?.skin_color }}</div>
+        <div class="fontweight my-2">Parent Name:{{speciesName}}</div>
+        <div class="fontweight">Species:{{parentDetails?.name}}</div>
+
+      </div>
+    </div>
+    <div class="profile-details-container">
+      <div class="films-container">
+        <div class="fontRoboto fontcolor cardLabel">FILMS</div>
+        <div class="row">
+          <div *ngIf="movieDetailsList.length!=0;then moviedata else movienodata"></div>
+          <ng-template #moviedata>
+          <div class="col-6" *ngFor="let films of movieDetailsList;let i=index">
+            <div class="detail-card">
+              <div class="fontweight">Movie Detail Card {{i+1}}</div>
+              <div>Movie Title:{{films.title}}</div>
+              <div>Director Name:{{films.director}}</div>
+              <div>Producer Name:{{films.producer}}</div>
+              <div>Release date :{{films.release_date}}</div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template #movienodata>
+          <div class="col-12">
+            <div class="col-12 detail-card">
+              No Data Found
+            </div>
+          </div>
+        </ng-template>
+        </div>
+
+      </div>
+      <div class="vehicles-container">
+        <div class="fontRoboto fontcolor cardLabel">VEHICLES</div>
+        <div class="row">
+          <div *ngIf="vehicleDetailsList.length!=0;then vehicledata else vehiclenodata"></div>
+          <ng-template #vehicledata>
+            <div class="col-6" *ngFor="let vehicle of vehicleDetailsList;let i=index">
+              <div class="detail-card">
+                <div class="fontweight">Vehicle Detail Card {{i+1}}</div>
+                <div>Vehicle Name:{{vehicle.name}}</div>
+                <div>Vehicle Model:{{vehicle.model}}</div>
+                <div>Vehicle Manufacturer:{{vehicle.manufacturer}}</div>
+                <div>Vehicle Max atmosphering speed :{{vehicle.max_atmosphering_speed}}</div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #vehiclenodata>
+            <div class="col-12">
+              <div class="col-12 detail-card">
+                No Data Found
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <div class="starships-container">
+        <div class="fontRoboto fontcolor cardLabel">STARSHIPS</div>
+        <div class="row">
+          <div *ngIf="starShipsDetailsList.length!=0;then starshipdata else starshipnodata"></div>
+          <ng-template #starshipdata>
+          <div class="col-6" *ngFor="let starships of starShipsDetailsList;let i=index;">
+            <div class="detail-card fontRoboto">
+              <div class="fontweight">Starships Detail Card {{i+1}}</div>
+              <div>Starships Name:{{starships.name}}</div>
+              <div>Vehicle Model:{{starships.model}}</div>
+              <div>Vehicle Manufacturer:{{starships.manufacturer}}</div>
+              <div>Vehicle Max atmosphering speed :{{starships.max_atmosphering_speed}}</div>
+            </div>
+          </div>
+        </ng-template>
+          <ng-template #starshipnodata>
+            <div class="col-12">
+              <div class="col-12 detail-card">
+                No Data Found
+              </div>
+            </div>
+          </ng-template>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

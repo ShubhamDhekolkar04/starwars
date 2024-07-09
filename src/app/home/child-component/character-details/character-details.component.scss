@@ -1,0 +1,61 @@
+.web-container {
+    height: 92vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.profile-container {
+    height: 80vh;
+    width: 15%;
+    background: #ffffff;
+    padding: 1rem;
+    overflow-y: auto;
+
+}
+
+.profile-details-container {
+    height: 80vh;
+    width: 80%;
+    background: #ffffff;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.earth {
+    background: #c8cdd7;
+    height: 80%;
+    width: 80%;
+    border-radius: 100%;
+    padding: 1rem;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.prfile-details {
+    color: #898989;
+    font-style: italic;
+}
+
+.fontweight {
+    color: #848484;
+    font-weight: 500;
+}
+.detail-card{
+   height: auto;
+   max-height: 22vh;
+   width: 100%;
+   background-color: #ebf0f0;
+   margin: .5rem 0rem;
+   padding: .5rem;
+   border-radius: 10px;
+   overflow-y: auto;
+   
+}
+.cardLabel{
+    font-size: 1em;
+    font-weight: 500;
+     
+}
